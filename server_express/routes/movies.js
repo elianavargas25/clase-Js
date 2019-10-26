@@ -43,9 +43,9 @@ function moviesApi(app) {
 
     //Crear una nueva pelicula
     router.post('/', async (req, res, next) => {
-        const  { body:movie } = req;
+        const { body: movie } = req;
         try {
-            const createdMovieId =await moviesService.createMovie({ movie });
+            const createdMovieId = await moviesService.createMovie({ movie });
             res.status(201).json({
                 createdMovieId: createdMovieId,
                 mensage: 'movies created'
